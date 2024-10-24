@@ -7,17 +7,17 @@
     "licenseURL": "https://github.com/real-ity/devcontainers-templates/tree/main/LICENSE",
     "options": {
         "denoVersion": {
-        "type": "string",
-        "description": "Deno Version",
-        "proposals": ["2.0.0"],
-        "default": "2.0.0"
+            "type": "string",
+            "description": "Deno Version",
+            "proposals": ["2.0.0"],
+            "default": "2.0.0"
         },
         "nodeVersion": {
-        "type": "string",
-        "description": "Node Version",
-        "proposals": ["18","20"],
-        "default": "20"
+            "type": "string",
+            "description": "Node Version",
+            "proposals": ["18","20"],
+            "default": "20"
         }
     },
-    "platforms": ["Any"]
+    "platforms": ["Any","x86","arm64"]
 }

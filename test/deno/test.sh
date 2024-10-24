@@ -4,7 +4,7 @@ source test-utils.sh
 
 # Template specific tests
 check "distro" lsb_release -c
-check "deno" [ $(deno --version) ]
+check "deno" deno --version
 
 # Report result
 reportResults
