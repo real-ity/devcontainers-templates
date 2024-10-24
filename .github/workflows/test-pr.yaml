@@ -28,7 +28,11 @@ jobs:
         templates: ${{ fromJSON(needs.detect-changes.outputs.templates) }}
     steps:
       - uses: actions/checkout@v4
-
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+      
       - name: Smoke test for '${{ matrix.templates }}'
         id: smoke_test
         uses: ./.github/actions/smoke-test
