@@ -9,15 +9,20 @@
         "denoVersion": {
             "type": "string",
             "description": "Deno Version",
-            "proposals": ["2.0.0"],
+            "proposals": [
+                "2.0.0"
+            ],
             "default": "2.0.0"
         },
         "nodeVersion": {
             "type": "string",
             "description": "Node Version",
-            "proposals": ["18","20"],
+            "proposals": [
+                "18",
+                "20"
+            ],
             "default": "20"
         }
     },
-    "platforms": ["Any","x86","arm64"]
+    "platforms": ["Any"]
 }

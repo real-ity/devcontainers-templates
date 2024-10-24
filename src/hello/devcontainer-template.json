@@ -28,7 +28,5 @@
             "default": "hey"
         }
     },
-    "platforms": [
-        "Any"
-    ]
+    "platforms": ["Any"]
 }

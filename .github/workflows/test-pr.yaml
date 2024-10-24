@@ -1,7 +1,6 @@
 name: "CI - Test Templates"
 on:
   pull_request:
-  workflow_dispatch:
 
 jobs:
   detect-changes:
@@ -9,9 +8,7 @@ jobs:
     outputs:
       templates: ${{ steps.filter.outputs.changes }}
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: dorny/paths-filter@v2
+      - uses: dorny/paths-filter@v3
         id: filter
         with:
           filters: |
