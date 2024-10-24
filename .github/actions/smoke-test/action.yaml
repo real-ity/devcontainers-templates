@@ -1,4 +1,5 @@
 name: 'Smoke test'
+description: 'Smoke test for templates'
 inputs:
   template:
     description: 'Template to test'
