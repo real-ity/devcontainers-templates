@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "name": "Deno",
     "description": "A Template for Deno development",
-    "documentationURL": "",
-    "licenseURL": "",
+    "documentationURL": "https://github.com/real-ity/devcontainers-templates/tree/main/src/deno",
+    "licenseURL": "https://github.com/real-ity/devcontainers-templates/tree/main/LICENSE",
     "options": {
         "denoVersion": {
         "type": "string",
