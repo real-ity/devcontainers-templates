@@ -14,6 +14,7 @@ jobs:
           filters: |
             color: ./**/color/**
             hello: ./**/hello/**
+            deno: ./**/deno/**
 
   test:
     needs: [detect-changes]
