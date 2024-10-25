@@ -17,6 +17,7 @@ runs:
       run: |
         pwd
         ls -lah
+        echo ${{ github.action_path }}
 
     - name: Build template
       id: build_template
