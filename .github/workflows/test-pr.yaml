@@ -20,23 +20,13 @@ jobs:
   test:
     needs: [detect-changes]
     runs-on: arc-runner-set
+    container: mcr.microsoft.com/devcontainers/javascript-node:1-18-bullseye
     continue-on-error: true
     strategy:
       matrix:
         templates: ${{ fromJSON(needs.detect-changes.outputs.templates) }}
     steps:
       - uses: actions/checkout@v4
-      
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "18"
-
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Smoke test for '${{ matrix.templates }}'
         id: smoke_test
