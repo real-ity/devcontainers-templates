@@ -14,7 +14,9 @@ runs:
 
     - name: List current Dir
       shell: sh
-      run: ls -la
+      run: |
+        pwd
+        ls -lah
 
     - name: Build template
       id: build_template
