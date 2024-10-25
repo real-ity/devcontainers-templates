@@ -17,7 +17,9 @@ runs:
       run: |
         pwd
         ls -lah
-        echo ${{ github.action_path }}
+        echo GITHUB_ACTION_PATH=${{ github.action_path }}
+        echo -e ENV:\n\n\n
+        printenv
 
     - name: Build template
       id: build_template
