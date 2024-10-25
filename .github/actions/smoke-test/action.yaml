@@ -12,6 +12,10 @@ runs:
       id: checkout_release
       uses: actions/checkout@v4
 
+    - name: List current Dir
+      shell: sh
+      run: ls -la
+
     - name: Build template
       id: build_template
       shell: sh
