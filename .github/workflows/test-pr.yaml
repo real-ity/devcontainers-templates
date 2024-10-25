@@ -20,18 +20,13 @@ jobs:
   test:
     needs: [detect-changes]
     runs-on: arc-runner-set
-    container: docker:dind
+    container: node:20 
     continue-on-error: true
     strategy:
       matrix:
         templates: ${{ fromJSON(needs.detect-changes.outputs.templates) }}
     steps:
       - uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20'
 
       - name: Smoke test for '${{ matrix.templates }}'
         id: smoke_test
