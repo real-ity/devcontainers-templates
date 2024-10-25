@@ -22,9 +22,9 @@ runs:
     - name: Build template
       id: build_template
       shell: sh
-      run: ${{ github.action_path }}/build.sh ${{ inputs.template }}
+      run: ./.github/actions/build.sh ${{ inputs.template }}
 
     - name: Test template
       id: test_template
       shell: sh
-      run: ${{ github.action_path }}/test.sh  ${{ inputs.template }}
+      run: ./.github/actions/test.sh  ${{ inputs.template }}
