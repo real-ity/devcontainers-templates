@@ -19,17 +19,14 @@ jobs:
 
   test:
     needs: [detect-changes]
-    runs-on: self-hosted
+    runs-on: arc-runner-kube
+    container: ghcr.io/real-ity/devcontainers-templates:latest 
     continue-on-error: true
     strategy:
       matrix:
         templates: ${{ fromJSON(needs.detect-changes.outputs.templates) }}
     steps:
       - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "lts/*"
       
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
