@@ -24,9 +24,9 @@ runs:
     - name: Build template
       id: build_template
       shell: sh
-      run: ${{ github.workspace }}/.github/actions/smoke-test/build.sh ${{ inputs.template }}
+      run: ${{ github.actions }/build.sh ${{ inputs.template }}
 
     - name: Test template
       id: test_template
       shell: sh
-      run: ${{ github.workspace }}/.github/actions/smoke-test/test.sh  ${{ inputs.template }}
+      run: ${{ github.actions}}/test.sh  ${{ inputs.template }}
