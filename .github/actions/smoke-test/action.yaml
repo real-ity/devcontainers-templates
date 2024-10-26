@@ -12,15 +12,6 @@ runs:
       id: checkout_release
       uses: actions/checkout@v4
 
-    - name: List current Dir
-      shell: bash
-      run: |
-        pwd
-        ls -lah
-        echo GITHUB_ACTION_PATH=${{ github.action_path }}
-        echo -e "ENV:\n\n\n"
-        printenv
-
     - name: Build template
       id: build_template
       shell: bash
