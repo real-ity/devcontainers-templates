@@ -29,4 +29,4 @@ runs:
     - name: Test template
       id: test_template
       shell: sh
-      run: ${{ github.workspace }}/github/actions/smoke-test/test.sh  ${{ inputs.template }}
+      run: ${{ github.workspace }}/.github/actions/smoke-test/test.sh  ${{ inputs.template }}
