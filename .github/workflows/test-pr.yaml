@@ -5,7 +5,7 @@ on:
 
 jobs:
   detect-changes:
-    runs-on: arc-runner-set
+    runs-on: arc-runner-kube
     outputs:
       templates: ${{ steps.filter.outputs.changes }}
     steps:
@@ -20,7 +20,6 @@ jobs:
   test:
     needs: [detect-changes]
     runs-on: arc-runner-kube
-    container: docker:dind
     continue-on-error: true
     strategy:
       matrix:
