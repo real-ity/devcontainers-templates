@@ -5,7 +5,7 @@ on:
 
 jobs:
   detect-changes:
-    runs-on: arc-runner-kube
+    runs-on: arc-runner-set
     outputs:
       templates: ${{ steps.filter.outputs.changes }}
     steps:
@@ -19,7 +19,7 @@ jobs:
 
   test:
     needs: [detect-changes]
-    runs-on: arc-runner-kube
+    runs-on: arc-runner-dind
     container: ghcr.io/real-ity/devcontainers-templates:latest 
     continue-on-error: true
     strategy:
