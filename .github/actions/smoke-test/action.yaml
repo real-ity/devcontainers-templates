@@ -13,7 +13,7 @@ runs:
       uses: actions/checkout@v4
 
     - name: List current Dir
-      shell: sh
+      shell: bash
       run: |
         pwd
         ls -lah
@@ -23,10 +23,10 @@ runs:
 
     - name: Build template
       id: build_template
-      shell: sh
+      shell: bash
       run: ${{ github.action_path }}/build.sh ${{ inputs.template }}
 
     - name: Test template
       id: test_template
-      shell: sh
+      shell: bash
       run: ${{ github.action_path }}/test.sh  ${{ inputs.template }}
