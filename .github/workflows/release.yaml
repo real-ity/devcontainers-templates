@@ -49,7 +49,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "Build & Push Dev Env"
-        run: devcontainer build --workspace-folder . --push true --image-name ghcr.io/real-ity/devcontainers-templates:latest
+        run: devcontainer build --workspace-folder . --platform amd64 --push true --image-name ghcr.io/real-ity/devcontainers-templates:latest
 
       - name: Create PR for Documentation
         id: push_image_info
