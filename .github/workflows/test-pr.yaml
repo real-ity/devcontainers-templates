@@ -5,7 +5,7 @@ on:
 
 jobs:
   detect-changes:
-    runs-on: arc-runner-ubuntu
+    runs-on: arc-runner-ubuntu-dind
     outputs:
       templates: ${{ steps.filter.outputs.changes }}
     steps:
