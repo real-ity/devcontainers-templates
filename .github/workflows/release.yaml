@@ -8,7 +8,10 @@ on:
 jobs:
   deploy:
     if: ${{ github.ref == 'refs/heads/main' }}
-    runs-on: arc-runner-dind
+    runs-on: arc-runner-kube
+    container:
+      image: ghcr.io/real-ity/devcontainers-templates:latest
+      options: --privileged
     permissions:
       packages: write
       contents: write
@@ -30,6 +33,7 @@ jobs:
           && sudo apt update \
           && sudo apt install gh -y \
           && sudo apt clean -y
+          && npm install -g @devcontainers/cli
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
@@ -46,6 +50,9 @@ jobs:
           generate-docs: "true"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Build & Push Dev Env"
+        run: devcontainer build --workspace-folder . --push true --image-name ghcr.io/real-ity/devcontainers-templates:latest
 
       - name: Create PR for Documentation
         id: push_image_info
