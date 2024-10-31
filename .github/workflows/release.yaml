@@ -8,10 +8,7 @@ on:
 jobs:
   deploy:
     if: ${{ github.ref == 'refs/heads/main' }}
-    runs-on: arc-runner-kube
-    container:
-      image: ghcr.io/real-ity/devcontainers-templates:latest
-      options: --privileged
+    runs-on: arc-runner-dind
     permissions:
       packages: write
       contents: write
