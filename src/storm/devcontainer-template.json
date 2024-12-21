@@ -1,0 +1,40 @@
+{
+    "id": "storm",
+    "version": "1.0.0",
+    "name": "Apache Storm",
+    "description": "A Template for Apache Storm",
+    "documentationURL": "https://github.com/real-ity/devcontainers-templates/tree/main/src/storm",
+    "licenseURL": "https://github.com/devcontainers/template-starter/blob/main/LICENSE",
+    "options": {
+        "imageVariant": {
+            "type": "string",
+            "description": "Debian version (use bullseye on local arm64/Apple Silicon):",
+            "proposals": [
+                "bullseye",
+                "buster"
+            ],
+            "default": "bullseye"
+        },
+        "javaVersion": {
+            "type": "string",
+            "description": "Java version:",
+            "proposals": [
+                "21",
+                "17",
+                "11",
+                "8"
+            ],
+            "default": "21"
+        },
+        "stormVersion": {
+            "type": "string",
+            "description": "Apache Storm version:",
+            "proposals": [
+                "2.6.4",
+                "2.5"
+            ],
+            "default": "2.6.4"
+        },
+        "platforms": ["Any"]
+    }
+}
